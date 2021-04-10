@@ -3,22 +3,15 @@ var router = express.Router()
 
 var mems_controller = require('../controllers/mems.js')
 
-
+// /api/mems/*
 router.get("/", mems_controller.index);
 
-router.get("/:id", (req, res) =>{
-    res.send('')
-})
+router.get("/:id", mems_controller.getByIdMem)
 
-router.post("/", (req, res) =>{
-    res.send('')
-})
-router.put("/:id", (req, res) =>{
-    res.send('')
-})
+router.post("/", mems_controller.addMem)
 
-router.delete("/:id", (req, res) =>{
-    res.send('')
-})
+router.put("/:id", mems_controller.editMem)
+
+router.delete("/:id", mems_controller.deleteMem)
 
 module.exports = router

@@ -1,5 +1,9 @@
-var memsModel = require('../models/memsSchema.js')
-var userModel = require('../models/userSchema.js')
+const memsModel = require('../models/memsSchema.js')
+const userModel = require('../models/userSchema.js')
+const tagsModel = require('../models/tagsSchema.js')
+
+
+
 exports.index = (req, res) =>{
     memsModel.find({}).then((doc) =>{
         res.send(doc)
@@ -7,23 +11,12 @@ exports.index = (req, res) =>{
 
 }
 
-exports.addMem = (req, res) =>{
+exports.add = (req, res) =>{
     // const body = req.body
 
-
-    const mem = new memsModel({
-        title: "Nowy",
-        tags: ["asd", "test"],
-        link: "htt://localhost.pl",
-        reactions: [{icon: ":)", count: 2}]
-    })
-    mem.save().then((res)=>{
-        console.log(res)
-    })
-
-    res.send('/post')
+    res.send('add')
 }
-exports.editMem = (req, res) =>{
+exports.edit = (req, res) =>{
     // const body = req.body
 
     // const newMem = new memsModel(body)
@@ -38,7 +31,7 @@ exports.editMem = (req, res) =>{
     // }
     res.send('/post')
 }
-exports.deleteMem =  (req, res) =>{
+exports.delete=  (req, res) =>{
     // const body = req.body
 
     // const newMem = new memsModel(body)
@@ -53,7 +46,7 @@ exports.deleteMem =  (req, res) =>{
     // }
     res.send('/post')
 }
-exports.getByIdMem =  (req, res) =>{
+exports.getByTitle =  (req, res) =>{
     // const body = req.body
 
     // const newMem = new memsModel(body)
