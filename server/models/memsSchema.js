@@ -1,7 +1,7 @@
 var mongoose = require("mongoose")
 var Schema = mongoose.Schema
 
-var memsSchema = new Schema({
+const memsSchema = new Schema({
     title: String,
     author: {type: Schema.Types.ObjectId, ref: 'users'},
     tags: [String],
@@ -10,6 +10,12 @@ var memsSchema = new Schema({
 })
 
 
-
+memsSchema.set('toJSON', {
+    transform: (document, returnedObject) => {
+      returnedObject.id = returnedObject._id.toString()
+      delete returnedObject._id
+      delete returnedObject.__v
+    }
+  })
 
 module.exports = mongoose.model('mems', memsSchema, 'mems')

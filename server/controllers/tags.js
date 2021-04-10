@@ -5,7 +5,7 @@ const tagsModel = require('../models/tagsSchema.js')
 
 
 exports.index = (req, res) =>{
-    memsModel.find({}).then((doc) =>{
+    tagsModel.find({}).then((doc) =>{
         res.send(doc)
     })
 
@@ -13,7 +13,12 @@ exports.index = (req, res) =>{
 
 exports.add = (req, res) =>{
     // const body = req.body
+    const tag = new tagsModel({
+        title: "papaj",
+        date: "10.04.2022 12:12:12"
+    })
 
+    tag.save().then(doc => console.log(doc))
     res.send('add')
 }
 exports.edit = (req, res) =>{
