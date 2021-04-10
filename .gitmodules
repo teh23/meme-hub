@@ -1,0 +1,3 @@
+[submodule "meme-hub-server"]
+	path = meme-hub-server
+	url = https://github.com/teh23/meme-hub-server.git
