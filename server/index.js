@@ -5,16 +5,31 @@ var memsRoutes = require("./routes/mems")
 var usersRouters = require("./routes/users.js")
 const tagsRoutes = require("./routes/tags.js")
 var mongoose = require("mongoose")
+const cors = require('cors')
 
-mongoose.connect(process.env.URL, {useNewUrlParser: true, useUnifiedTopology: true})
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+const url = process.env.URL
+
+console.log('connecting to', url)
+
+mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
+  .then(result => {
+    console.log('connected to MongoDB')
+  })
+  .catch((error) => {
+    console.log('error connecting to MongoDB:', error.message)
+  })
 
 
 app.use(express.json())
+app.use(cors())
+app.use(express.static('build'))
 
 app.use("/api/tags", tagsRoutes)
 app.use("/api/mems" , memsRoutes)
 app.use("/api/users", usersRouters )
 
-app.listen(3000)
+const PORT = process.env.PORT || 3001
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
