@@ -1,11 +1,14 @@
-import { className } from 'postcss-selector-parser';
+import Layout from './view/Layout'
 import React from 'react';
 
 function App() {
   return (
-    <div className="btn">
-      asdasd
-    </div>
+    <>
+      <Layout>
+       
+
+      </Layout>
+    </>
   );
 }
 
