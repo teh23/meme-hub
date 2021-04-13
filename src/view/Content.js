@@ -1,10 +1,13 @@
 import React from 'react'
+import Box from "../components/Box"
+import Header from "../components/Header"
+
 
 const Content = () => {
     return (
-        <div>
-            
-        </div>
+        <Box>
+            <Header className="h3">MEMM'S</Header>
+        </Box>
     )
 }
 

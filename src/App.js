@@ -1,13 +1,13 @@
 import Layout from './view/Layout'
 import React from 'react';
 import './index.sass';
-
+import Content from './view/Content'
 function App() {
   return (
     <>
       <Layout>
-       
-        witam w mojej kuchni
+    
+        <Content/>
       </Layout>
     </>
   );

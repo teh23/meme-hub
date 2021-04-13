@@ -12,7 +12,7 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="right-side">
-                        <Nav.Link className={"me-3"} href="#">
+                        <Nav.Link className={"mr-2"} href="#">
                             Home
                         </Nav.Link>
                         <Nav.Link
@@ -21,7 +21,7 @@ const Header = () => {
                             href="#memes"
                         >
                             <i class="fa fa-github" aria-hidden="true"></i>
-                            <span class="ms-2">Project</span>
+                            <span class="ml-2">Project</span>
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
