@@ -18,6 +18,16 @@ const List = (props) => {
 };
 
 const ListItem = (props) => {
+    if (props.tag === true) {
+        const string = props.children.replace(/\s/g, "")
+        const headString = string.charAt(0)
+        const tailString = string.slice(1)
+        return (
+            <>
+                <Li {...props}><strong><span className="text-muted mr-1 ">{headString}</span></strong>{tailString}</Li>
+            </>
+        );
+    }
     return (
         <>
             <Li {...props}>{props.children}</Li>

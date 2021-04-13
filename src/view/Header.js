@@ -8,6 +8,7 @@ const Header = () => {
             <Container>
                 {" "}
                 <Navbar.Brand className="" href="#">
+                    <img className="mr-2" alt="logo" src="https://raw.githubusercontent.com/iliana/html5nyancat/master/nyan1.svg"/>
                     <strong>MEMHUB </strong>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
