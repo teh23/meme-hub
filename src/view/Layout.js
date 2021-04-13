@@ -1,18 +1,24 @@
 import React from "react";
 import Header from "./Header";
 import { Container, Col, Row } from "react-bootstrap/";
+import TagsMenu from "./TagsMenu";
 
-const Layout = () => {
+const Layout = ({ children }) => {
     return (
-        <Container>
+        <>
             <Row>
                 <Header></Header>
             </Row>
-            <Row>
-                <Col className="bg-dark" xs={3}>dsa</Col>
-                <Col className="bg-color-red">gadfad</Col>
-            </Row>
-        </Container>
+            <Container>
+                <Row>
+                    <Col className="bg-dark" xs={2}>
+                        <TagsMenu />
+                    </Col>
+                    <Col className="bg-primary">{children}</Col>
+                    <Col xs={2} className="bg-secondary"></Col>
+                </Row>
+            </Container>
+        </>
     );
 };
 

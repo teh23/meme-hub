@@ -1,25 +1,33 @@
-import React from 'react'
+import React from "react";
+import { Container, Col, Row, Button, Navbar, Nav } from "react-bootstrap/";
 
 const Header = () => {
     return (
-        <header className="h-12 bg-blue-400">
-            <div className="md:container md:mx-auto grid grid-cols-3 gap-4">
-                <div className="col-span-10" >
-                    LOGO   
-                </div>
-                
-                <ul className="flex flex-row col-span-1">
-                    <li className="ml-4">
-                        1
-                    </li>
-                    <li className="ml-4">
-                        2
-                    </li>
-                </ul>    
-                            
-            </div>
-        </header>
-    )
-}
+        <Navbar expand="lg" variant="light" bg="light">
+            <Container>
+                {" "}
+                <Navbar.Brand className="" href="#">
+                    <strong>MEMHUB </strong>
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="right-side">
+                        <Nav.Link className={"me-3"} href="#">
+                            Home
+                        </Nav.Link>
+                        <Nav.Link
+                            variant="outline-dark"
+                            eventKey={2}
+                            href="#memes"
+                        >
+                            <i class="fa fa-github" aria-hidden="true"></i>
+                            <span class="ms-2">Project</span>
+                        </Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    );
+};
 
-export default Header
+export default Header;
