@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
                 <Row>
                     
                     <Col lg={9} className="order-sm-1">{children}</Col>
-                    <Col className="order-sm-0 order-first order-md-last" >
+                    <Col className="order-sm-0 order-first order-lg-last" >
                         <TagsMenu />
                     </Col>
                 </Row>
