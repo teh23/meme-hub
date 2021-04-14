@@ -12,8 +12,8 @@ const Layout = ({ children }) => {
             <Container>
                 <Row>
                     
-                    <Col>{children}</Col>
-                    <Col className="" lg={3}>
+                    <Col lg={9} className="order-sm-1">{children}</Col>
+                    <Col className="order-sm-0 order-first order-md-last" >
                         <TagsMenu />
                     </Col>
                 </Row>
