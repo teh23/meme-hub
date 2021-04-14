@@ -1,9 +1,11 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-
+const Span = styled.span`
+    font-size: 14px;
+`;
 const ATag = styled.a`
     color: #939393;
-    padding-top: 5px;
+  
 
     :hover {
         color: #111111;
@@ -12,7 +14,7 @@ const ATag = styled.a`
 `;
 
 const PostTag = (props) => {
-    const { data = "2h" , href="#"} = props;
+    const { data = "2h", href = "#" } = props;
 
     const formatData = () => {
         //TODO
@@ -24,17 +26,17 @@ const PostTag = (props) => {
         const headString = string.charAt(0);
         const tailString = string.slice(1);
         return (
-            <div className={`d-flex flex-row mb-2 mt-2 ${props.className}`}>
+            <div className={`d-flex flex-row mb-2 ${props.className}`}>
                 <ATag href={href}>
                     <strong>
-                        <span className="text-muted mr-1 ">{headString}</span>
+                        <Span className="text-muted mr-1 ">{headString}</Span>
                     </strong>
-                    {tailString}
+                    <Span>{tailString}</Span>
+                    <Span className="text-muted ml-2">
+                    <small>· {data}</small>
+                </Span>
                 </ATag>
-                <span className="text-muted ml-2">.</span>
-                <span className="pt-1 ml-1 text-muted">
-                    <small>{data}</small>
-                </span>
+                
             </div>
         );
     }
@@ -50,4 +52,4 @@ const PostTag = (props) => {
     );
 };
 
-export default PostTag
+export default PostTag;
