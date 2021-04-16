@@ -31,7 +31,7 @@ const TagsMenu = () => {
             <List>
                 {tags.map( (row) =>{
                     return(
-                        <ListItem tag={true} key={row.title}>{`#${row.title}`}</ListItem>
+                        <ListItem howManyUsed={3} tag={true} key={row.title}>{`#${row.title}`}</ListItem>
                     )
                 })}
             </List>
